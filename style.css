@@ -1,0 +1,1272 @@
+/* =====================================================
+   AQUA CULTURE WEBSITE - STYLE.CSS
+   ===================================================== */
+
+/* ---------- BASIC RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #087f8c;
+    --secondary: #05b6a8;
+    --dark: #073b4c;
+    --text: #183b45;
+    --light: #eefbfb;
+    --white: #ffffff;
+    --border: #d7eeee;
+    --shadow: 0 15px 40px rgba(4, 68, 80, 0.12);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #ffffff;
+    line-height: 1.65;
+}
+
+
+/* ---------- COMMON ---------- */
+
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+.section {
+    padding: 85px 0;
+}
+
+.section.light {
+    background: var(--light);
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    color: var(--dark);
+    line-height: 1.15;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 3px 18px rgba(0, 0, 0, 0.08);
+}
+
+.navbar {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+
+    color: var(--dark);
+
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.nav-links {
+    display: flex;
+
+    gap: 20px;
+
+    list-style: none;
+
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--dark);
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+/* ---------- MOBILE MENU BUTTON ---------- */
+
+.menu-btn {
+    display: none;
+
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    border-radius: 9px;
+
+    font-size: 22px;
+
+    padding: 7px 11px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9ffff,
+            #b8f4f0 45%,
+            #dff7ff
+        );
+
+    overflow: hidden;
+}
+
+.hero-content {
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 10vw, 120px);
+
+    line-height: 0.85;
+
+    color: var(--dark);
+
+    letter-spacing: -6px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-description {
+    font-size: 19px;
+
+    max-width: 600px;
+
+    margin: 28px 0;
+
+    color: #355d66;
+}
+
+
+/* ---------- HERO BUTTONS ---------- */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 13px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.primary {
+    background: var(--primary);
+
+    color: white;
+}
+
+.secondary {
+    border: 2px solid var(--primary);
+
+    color: var(--primary);
+}
+
+
+/* ---------- FISH CARD ---------- */
+
+.fish-card {
+    min-height: 360px;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #087f8c,
+            #04b7a9
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.fish {
+    font-size: 130px;
+
+    filter:
+        drop-shadow(
+            0 15px 8px rgba(0, 0, 0, 0.15)
+        );
+
+    animation: swim 3s ease-in-out infinite;
+}
+
+.fish-card p {
+    font-size: 17px;
+
+    max-width: 320px;
+}
+
+
+/* ---------- BUBBLES ---------- */
+
+.bubble {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    animation: float 4s infinite;
+}
+
+.b1 {
+    width: 30px;
+    height: 30px;
+
+    right: 50px;
+    top: 55px;
+}
+
+.b2 {
+    width: 17px;
+    height: 17px;
+
+    left: 55px;
+    top: 90px;
+}
+
+.b3 {
+    width: 22px;
+    height: 22px;
+
+    right: 110px;
+    bottom: 60px;
+}
+
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes swim {
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(-3deg);
+    }
+
+}
+
+@keyframes float {
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+}
+
+
+/* =====================================================
+   TWO COLUMN
+   ===================================================== */
+
+.two-col {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.info-card {
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: white;
+
+    box-shadow: var(--shadow);
+}
+
+.info-card h3 {
+    font-size: 23px;
+
+    color: var(--dark);
+
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    margin-bottom: 15px;
+}
+
+.highlight {
+    background:
+        linear-gradient(
+            135deg,
+            #087f8c,
+            #0aa99c
+        );
+
+    color: white;
+}
+
+.highlight h3 {
+    color: white;
+}
+
+
+/* =====================================================
+   CHECK LIST
+   ===================================================== */
+
+.check-list {
+    list-style: none;
+
+    display: grid;
+
+    gap: 10px;
+}
+
+.check-list li::before {
+    content: "✓";
+
+    font-weight: bold;
+
+    color: var(--secondary);
+
+    margin-right: 10px;
+}
+
+.highlight .check-list li::before {
+    color: white;
+}
+
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.cards {
+    display: grid;
+
+    gap: 20px;
+}
+
+.cards.four {
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+.cards.three {
+    grid-template-columns:
+        repeat(3, 1fr);
+}
+
+.topic-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    padding: 27px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 80, 90, 0.07);
+
+    transition: 0.25s;
+}
+
+.topic-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow);
+}
+
+.topic-card span {
+    font-size: 40px;
+}
+
+.topic-card h3 {
+    color: var(--dark);
+
+    margin: 12px 0 7px;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   CULTURE SYSTEM TIMELINE
+   ===================================================== */
+
+.timeline {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.timeline > div {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    border-top: 5px solid var(--secondary);
+
+    box-shadow: var(--shadow);
+}
+
+.timeline b {
+    font-size: 35px;
+
+    color: var(--primary);
+}
+
+.timeline h3 {
+    color: var(--dark);
+
+    margin: 8px 0;
+}
+
+
+/* =====================================================
+   WATER QUALITY
+   ===================================================== */
+
+.metric {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #d9eeee;
+
+    padding: 14px 0;
+}
+
+.metric b {
+    color: var(--primary);
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   NOTICE
+   ===================================================== */
+
+.notice {
+    margin-top: 25px;
+
+    padding: 18px 22px;
+
+    border-radius: 15px;
+
+    background: #d9f8f5;
+
+    color: var(--dark);
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   DAILY MANAGEMENT
+   ===================================================== */
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+.step {
+    padding: 24px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+}
+
+.step > b {
+    display: grid;
+
+    place-items: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: white;
+}
+
+.step h3 {
+    margin: 13px 0 5px;
+
+    color: var(--dark);
+}
+
+
+/* =====================================================
+   FIELD VISIT
+   ===================================================== */
+
+.visit-section {
+    background:
+        linear-gradient(
+            135deg,
+            #063c4c,
+            #087f8c
+        );
+
+    color: white;
+}
+
+.visit-section .eyebrow,
+.visit-section h2 {
+    color: white;
+}
+
+.visit-card {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    background: white;
+
+    color: var(--text);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+.visit-photo {
+    min-height: 300px;
+
+    display: grid;
+
+    place-items: center;
+
+    font-size: 100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b8f4f0,
+            #d9f7ff
+        );
+
+    position: relative;
+}
+
+.visit-photo small {
+    position: absolute;
+
+    bottom: 35px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    color: var(--primary);
+}
+
+.visit-content {
+    padding: 35px;
+}
+
+.visit-content h3 {
+    font-size: 27px;
+
+    color: var(--dark);
+
+    margin-bottom: 15px;
+}
+
+.visit-content p {
+    margin-bottom: 14px;
+}
+
+
+/* =====================================================
+   SURVEY
+   ===================================================== */
+
+.survey-card {
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+.question {
+    padding: 28px;
+
+    border-bottom: 1px solid #dceeee;
+}
+
+.question:last-child {
+    border-bottom: none;
+}
+
+.question h3 {
+    color: var(--dark);
+
+    margin-bottom: 15px;
+}
+
+
+/* ---------- EXPLANATION BUTTON ---------- */
+
+.explain-btn {
+    border: none;
+
+    border-radius: 25px;
+
+    background: var(--primary);
+
+    color: white;
+
+    padding: 10px 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.explain-btn:hover {
+    background: var(--dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------- ANSWER ---------- */
+
+.answer {
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: #e9fbf9;
+
+    border-left: 4px solid var(--secondary);
+
+    border-radius: 8px;
+}
+
+.answer.show {
+    display: block;
+}
+
+
+/* =====================================================
+   AQUARIUM OBSERVATION
+   ===================================================== */
+
+.observation-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.observation-box {
+    padding: 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+
+    text-align: center;
+
+    font-size: 35px;
+
+    transition: 0.3s;
+}
+
+.observation-box:hover {
+    transform: translateY(-6px);
+}
+
+.observation-box h3 {
+    color: var(--dark);
+
+    margin: 12px 0 6px;
+
+    font-size: 20px;
+}
+
+.observation-box p {
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   STUDENT LEARNING
+   ===================================================== */
+
+.learning-strip {
+    margin-top: 25px;
+
+    padding: 18px 22px;
+
+    border-radius: 15px;
+
+    background: #d9f8f5;
+
+    color: var(--dark);
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   CHALLENGES TABLE
+   ===================================================== */
+
+.challenge-table {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+.challenge-table > div {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    padding: 20px;
+
+    border-bottom: 1px solid #dceeee;
+
+    gap: 20px;
+}
+
+.challenge-table > div:last-child {
+    border-bottom: none;
+}
+
+.challenge-table .table-head {
+    background: var(--dark);
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   OUTCOMES
+   ===================================================== */
+
+.impact {
+    padding: 28px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+.impact strong {
+    font-size: 42px;
+
+    color: var(--secondary);
+}
+
+.impact h3 {
+    color: var(--dark);
+
+    margin: 5px 0;
+}
+
+
+/* =====================================================
+   CONCLUSION
+   ===================================================== */
+
+.conclusion {
+    background: #eafafa;
+}
+
+.conclusion-card {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow: var(--shadow);
+
+    max-width: 850px;
+}
+
+.conclusion-card h3 {
+    margin: 25px 0 10px;
+
+    color: var(--dark);
+}
+
+blockquote {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-left: 5px solid var(--primary);
+
+    background: #eefafa;
+
+    font-style: italic;
+
+    font-weight: bold;
+
+    color: var(--dark);
+}
+
+
+/* =====================================================
+   TEAM
+   ===================================================== */
+
+.team-section {
+    background: var(--dark);
+
+    color: white;
+}
+
+.team-section h2,
+.team-section .eyebrow {
+    color: white;
+}
+
+.team-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+.member {
+    background: rgba(255, 255, 255, 0.1);
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.member:hover {
+    background: rgba(255, 255, 255, 0.18);
+
+    transform: translateY(-5px);
+}
+
+.member b {
+    display: block;
+}
+
+.member span {
+    font-size: 12px;
+
+    opacity: 0.8;
+}
+
+.guide {
+    margin: 30px auto;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    max-width: 600px;
+}
+
+.guide span {
+    color: #7ee9df;
+
+    font-weight: bold;
+}
+
+.guide h3 {
+    margin: 8px 0;
+}
+
+.college {
+    text-align: center;
+
+    opacity: 0.8;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.footer {
+    padding: 45px 0;
+
+    text-align: center;
+
+    background: #032b36;
+
+    color: white;
+}
+
+.footer h2 {
+    color: #7ee9df;
+
+    margin-bottom: 5px;
+}
+
+.copyright {
+    opacity: 0.6;
+
+    font-size: 13px;
+
+    margin-top: 12px;
+}
+
+
+/* =====================================================
+   BACK TO TOP BUTTON
+   ===================================================== */
+
+.top-btn {
+    position: fixed;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    border: none;
+
+    background: var(--primary);
+
+    color: white;
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    display: none;
+
+    box-shadow: var(--shadow);
+
+    z-index: 999;
+}
+
+.top-btn.show {
+    display: block;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    /* Mobile Navigation */
+
+    .nav-links {
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        background: white;
+
+        padding: 20px;
+
+        box-shadow:
+            0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    /* Layout */
+
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .visit-card {
+        grid-template-columns: 1fr;
+    }
+
+    .cards.four {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .timeline {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .observation-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 70px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .fish-card {
+        min-height: 260px;
+    }
+
+    .fish {
+        font-size: 90px;
+    }
+
+    .cards.four,
+    .cards.three,
+    .timeline,
+    .steps,
+    .observation-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .challenge-table > div {
+        grid-template-columns: 1fr;
+    }
+
+    .visit-photo {
+        min-height: 220px;
+    }
+
+    .visit-photo small {
+        bottom: 25px;
+    }
+
+    .visit-content {
+        padding: 25px;
+    }
+
+    .visit-content h3 {
+        font-size: 22px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
+    .metric {
+        flex-direction: column;
+
+        gap: 3px;
+    }
+
+  }
